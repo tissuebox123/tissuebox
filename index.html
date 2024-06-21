@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Low Storage Phone - Video Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .search-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .search-form {
+            margin-bottom: 20px;
+        }
+        .search-form input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Low Storage Phone - Video Search</h1>
+
+    <div class="search-container">
+        <div class="search-form">
+            <form id="youtubeSearchForm">
+                <input type="text" id="youtubeQuery" placeholder="Search YouTube" required>
+                <button type="submit">Search YouTube</button>
+            </form>
+        </div>
+
+        <div class="search-form">
+            <form id="tiktokSearchForm">
+                <input type="text" id="tiktokQuery" placeholder="Search TikTok" required>
+                <button type="submit">Search TikTok</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('youtubeSearchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = document.getElementById('youtubeQuery').value;
+            const url = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
+            window.open(url, '_blank');
+        });
+
+        document.getElementById('tiktokSearchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = document.getElementById('tiktokQuery').value;
+            const url = `https://www.tiktok.com/search?q=${encodeURIComponent(query)}`;
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
